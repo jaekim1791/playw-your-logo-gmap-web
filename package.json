@@ -1,0 +1,14 @@
+{
+  "name": "playw-your-logo-gmap-web",
+  "version": "1.0.0",
+  "description": "Validate user is able to locate a store in Our Store Page on Google map and verify user ia able to launch the store in Google Map with desktop browers",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2",
+    "allure-playwright": "^2.0.0-beta.16"
+  }
+}
