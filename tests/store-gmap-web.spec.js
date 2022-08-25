@@ -24,11 +24,15 @@ test.describe("VALIDATE STORE ON GOOLGE MAP", () => {
       context.waitForEvent("page"),
       page.click("a[href='http://maps.google.com/maps?saddr=&daddr=(25.736296, -80.244797)']"),
     ]);
+
     await googleMapTab.waitForURL("https://www.google.com/maps/dir//25.736296,-80.244797/@25.7360243,-80.3150666,12z");
+
     expect(
       googleMapTab.url().includes("https://www.google.com/maps/dir//25.736296,-80.244797/@25.7360243,-80.3150666,12z")
     ).toBeTruthy();
+
     console.log(googleMapTab.url());
+
     await expect(googleMapTab.locator("div[id='sb_ifc51'] >> input[aria-label]")).toHaveValue(
       "2999 SW 32nd Ave, Miami, FL 33133"
     );

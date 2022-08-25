@@ -8,7 +8,7 @@ const config = {
   expect: {
     timeout: 5000,
   },
-  // retries: 1,
+  retries: 1,
 
   fullyParallel: true,
 
@@ -24,6 +24,8 @@ const config = {
     // viewport: { width: 1366, height: 768 },
     trace: "retain-on-failure",
   },
+
+  // reporter: "allure-playwright",
 
   projects: [
     {
