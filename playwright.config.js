@@ -3,7 +3,7 @@ const { devices } = require("@playwright/test");
 const config = {
   testDir: "./tests",
 
-  timeout: 60 * 1000,
+  timeout: 30 * 1000,
 
   expect: {
     timeout: 5000,
@@ -14,8 +14,8 @@ const config = {
 
   use: {
     launchOptions: {
+      // args: ["--start-maximized"],
       // slowMo: 1000,
-      //   args: ["--start-maximized"],
     },
     headless: false,
     // browserName: "chromium",
@@ -34,14 +34,12 @@ const config = {
         ...devices["Desktop Chrome"],
       },
     },
-
     {
       name: "firefox",
       use: {
         ...devices["Desktop Firefox"],
       },
     },
-
     // NOTE: Issues with Safari over compensating "x" coordinate. Locator unable to find Store.
     // {
     //   name: "webkit",
@@ -49,7 +47,6 @@ const config = {
     //     ...devices["Desktop Safari"],
     //   },
     // },
-
     // NOTE: If MS Edge is ran on its own, "x" coordiate will over compensate.
     {
       name: "Microsoft Edge",

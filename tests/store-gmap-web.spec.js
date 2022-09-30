@@ -9,16 +9,18 @@ test.describe("VALIDATE STORE ON GOOLGE MAP", () => {
 
     await page.goto("http://automationpractice.com/index.php?controller=stores");
     await page.locator(".dismissButton").click();
-    await page.locator("button[title='Toggle fullscreen view']").click();
+
     await page.locator("button[title='Zoom in']").click();
+
     await page.locator("button[title='Zoom in']").click();
 
     await page.click("#map"); // NOTE: "click()" is required for mouse.down() to work.
     await page.mouse.down();
-    await page.mouse.move(600, 0, { steps: 16 }); // NOTE: {steps: } option is required to work. mouse.move() (x,y) coordinate is buggy and does not work as it should. Also, the coordiates work as (y,x) instead of (x,y).
+
+    await page.mouse.move(700, 0, { steps: 20 }); // NOTE: {steps: } option is required to work. mouse.move() (x,y) coordinate is buggy and does not work as it should. Also, the coordiates work as (y,x) instead of (x,y).
     await page.mouse.up();
 
-    await page.click("(//div[@role='button'])[4]");
+    await page.click("(//div[@role='button'])[4]"); // Coconut Grove store
 
     const [googleMapTab] = await Promise.all([
       context.waitForEvent("page"),
